@@ -12,30 +12,34 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
+            <ul role="navigation">
+                <li><a href="#home" title="Ir para a página inicial">Início</a></li>
+                <li><a href="#sobre" title="Mais informações sobre o site">Sobre</a></li>
+                <li><a href="#contato" title="Formas de contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section id="home">
-            <h1>Bem-vindo ao Meu Site Simples!</h1>
-            <p>Este é um exemplo de site usando HTML, CSS e JavaScript. Clique no botão abaixo para mudar a cor de fundo.</p>
-            <button id="changeColorBtn" aria-label="Mudar cor de fundo">Mudar Cor de Fundo</button>
-        </section>
+    <main>
+        <article class="container">
+            <section id="home">
+                <h1>Bem-vindo ao Meu Site Simples!</h1>
+                <p>Este é um exemplo de site usando HTML, CSS e JavaScript. Clique no botão abaixo para mudar a cor de fundo.</p>
+                <button id="changeColorBtn" aria-label="Mudar cor de fundo">Mudar Cor de Fundo</button>
+            </section>
 
-        <section id="sobre">
-            <h2>Sobre o Site</h2>
-            <p>Este site foi criado como exemplo simples para demonstrar o uso de HTML, CSS e JavaScript. O objetivo é mostrar como é possível criar uma página interativa e visualmente atraente com recursos básicos da web.</p>
-        </section>
+            <section id="sobre">
+                <h2>Sobre o Site</h2>
+                <p>Este site foi criado como exemplo simples para demonstrar o uso de HTML, CSS e JavaScript. O objetivo é mostrar como é possível criar uma página interativa e visualmente atraente com recursos básicos da web.</p>
+            </section>
 
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <p>Se você tiver dúvidas ou quiser saber mais sobre este site, entre em contato através do e-mail: <a href="mailto:exemplo@email.com">exemplo@email.com</a></p>
-        </section>
+            <section id="contato">
+                <h2>Entre em Contato</h2>
+                <p>Se você tiver dúvidas ou quiser saber mais sobre este site, entre em contato através do e-mail: 
+                   <a href="mailto:exemplo@email.com" title="Enviar e-mail para exemplo@email.com">exemplo@email.com</a>
+                </p>
+            </section>
+        </article>
     </main>
 
     <footer>
