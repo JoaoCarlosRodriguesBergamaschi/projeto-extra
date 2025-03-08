@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo de site simples com HTML, CSS e JavaScript">
     <title>Meu Site Simples</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Bem-vindo ao Meu Site Simples!</h1>
-        <p>Este é um exemplo de site usando HTML, CSS e JavaScript.</p>
-        <button id="changeColorBtn">Mudar Cor de Fundo</button>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home">
+            <h1>Bem-vindo ao Meu Site Simples!</h1>
+            <p>Este é um exemplo de site usando HTML, CSS e JavaScript. Clique no botão abaixo para mudar a cor de fundo.</p>
+            <button id="changeColorBtn" aria-label="Mudar cor de fundo">Mudar Cor de Fundo</button>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre o Site</h2>
+            <p>Este site foi criado como exemplo simples para demonstrar o uso de HTML, CSS e JavaScript. O objetivo é mostrar como é possível criar uma página interativa e visualmente atraente com recursos básicos da web.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <p>Se você tiver dúvidas ou quiser saber mais sobre este site, entre em contato através do e-mail: <a href="mailto:exemplo@email.com">exemplo@email.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meu Site Simples. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
