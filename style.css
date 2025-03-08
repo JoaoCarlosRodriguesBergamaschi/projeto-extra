@@ -5,44 +5,48 @@
     box-sizing: border-box;
 }
 
-/* Estilos do corpo da página */
+/* Estilos globais */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f5;
+    background-color: #f7f7f7; /* Cor de fundo suave */
     color: #333;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding: 0 10px;
 }
 
 /* Cabeçalho e navegação */
 header {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Cor verde */
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    gap: 30px; /* Espaçamento entre os links */
 }
 
 header nav ul li {
-    margin: 0 20px;
+    font-size: 1.1rem;
 }
 
 header nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1.2rem;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ffeb3b;
+    color: #ffeb3b; /* Cor amarela ao passar o mouse */
 }
 
 /* Estilo do conteúdo principal */
@@ -51,30 +55,32 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 20px 10px;
 }
 
 /* Estilo do container principal */
 .container {
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra mais suave e mais intensa */
     padding: 40px;
     text-align: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px; /* Largura máxima maior */
+    margin: 20px; /* Margem para um bom espaçamento */
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #4CAF50;
     margin-bottom: 20px;
+    letter-spacing: 2px; /* Espaçamento entre as letras para um visual mais clean */
 }
 
 p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
     color: #666;
+    margin-bottom: 30px;
 }
 
 /* Estilo dos botões */
@@ -86,13 +92,14 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Tom um pouco mais escuro de verde */
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efeito de sombra maior */
 }
 
 /* Estilo das seções */
@@ -110,6 +117,7 @@ a {
     color: #4CAF50;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -131,7 +139,11 @@ footer p {
 /* Responsividade */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Ajuste do tamanho do título para telas menores */
+    }
+
+    p {
+        font-size: 1rem; /* Ajuste do tamanho do parágrafo para telas menores */
     }
 
     button {
@@ -141,13 +153,29 @@ footer p {
 
     header nav ul {
         flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
+        gap: 15px; /* Reduzir o espaçamento entre os links */
     }
 
     .container {
         padding: 30px;
+        width: 100%;
     }
+}
+
+/* Animação do botão */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:focus {
+    outline: none;
+    animation: pulse 1.5s ease-in-out infinite;
 }
