@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Exemplo de site simples com HTML, CSS e JavaScript">
+    <meta name="author" content="Seu Nome">
+    <meta name="keywords" content="HTML, CSS, JavaScript, site simples, exemplo">
     <title>Meu Site Simples</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon -->
 </head>
 
 <body>
     <header>
-        <nav>
-            <ul role="navigation">
-                <li><a href="#home" title="Ir para a página inicial">Início</a></li>
-                <li><a href="#sobre" title="Mais informações sobre o site">Sobre</a></li>
-                <li><a href="#contato" title="Formas de contato">Contato</a></li>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#home" title="Ir para a página inicial" aria-label="Página inicial">Início</a></li>
+                <li><a href="#sobre" title="Mais informações sobre o site" aria-label="Sobre o site">Sobre</a></li>
+                <li><a href="#contato" title="Formas de contato" aria-label="Entre em contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -36,14 +39,31 @@
             <section id="contato">
                 <h2>Entre em Contato</h2>
                 <p>Se você tiver dúvidas ou quiser saber mais sobre este site, entre em contato através do e-mail: 
-                   <a href="mailto:exemplo@email.com" title="Enviar e-mail para exemplo@email.com">exemplo@email.com</a>
+                   <a href="mailto:exemplo@email.com" title="Enviar e-mail para exemplo@email.com" aria-label="Enviar um e-mail para exemplo@email.com">exemplo@email.com</a>
                 </p>
+            </section>
+
+            <section id="formulario">
+                <h2>Formulário de Contato</h2>
+                <form action="#" method="post" aria-labelledby="formulario">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                    
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Digite sua mensagem"></textarea>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
             </section>
         </article>
     </main>
 
     <footer>
         <p>&copy; 2025 Meu Site Simples. Todos os direitos reservados.</p>
+        <p><a href="#home" title="Voltar para o topo da página" aria-label="Voltar para o topo">Voltar ao topo</a></p>
     </footer>
 
     <script src="script.js"></script>
