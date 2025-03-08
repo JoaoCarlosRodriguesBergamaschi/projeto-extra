@@ -1,37 +1,43 @@
-/* Resetando alguns estilos padrões */
+/* Resetando estilos padrões para garantir consistência */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos globais */
+/* Estilo Global */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7; /* Cor de fundo suave */
+    background-color: #f4f4f9; /* Cor de fundo mais suave */
     color: #333;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding: 0 10px;
+    padding: 0 15px;
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Cabeçalho e navegação */
 header {
-    background-color: #4CAF50; /* Cor verde */
+    background-color: #4CAF50;
     color: white;
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 header nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 30px; /* Espaçamento entre os links */
+    gap: 30px;
 }
 
 header nav ul li {
@@ -42,48 +48,52 @@ header nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ffeb3b; /* Cor amarela ao passar o mouse */
+    color: #ffeb3b; /* Cor de destaque ao passar o mouse */
+    transform: translateY(-2px);
 }
 
-/* Estilo do conteúdo principal */
+header nav ul li a:focus {
+    outline: 2px solid #ffeb3b; /* Foco acessível */
+}
+
+/* Conteúdo Principal */
 main {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 10px;
+    padding: 20px 0;
 }
 
-/* Estilo do container principal */
 .container {
     background-color: white;
-    border-radius: 12px; /* Bordas mais arredondadas */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra mais suave e mais intensa */
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     padding: 40px;
     text-align: center;
     width: 100%;
-    max-width: 900px; /* Largura máxima maior */
-    margin: 20px; /* Margem para um bom espaçamento */
+    max-width: 900px;
+    margin: 20px;
 }
 
 h1 {
     font-size: 3rem;
     color: #4CAF50;
     margin-bottom: 20px;
-    letter-spacing: 2px; /* Espaçamento entre as letras para um visual mais clean */
+    letter-spacing: 1.5px;
 }
 
 p {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 30px;
+    line-height: 1.8;
 }
 
-/* Estilo dos botões */
 button {
     background-color: #4CAF50;
     color: white;
@@ -97,12 +107,17 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Tom um pouco mais escuro de verde */
+    background-color: #45a049;
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efeito de sombra maior */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo das seções */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 160, 72, 0.5); /* Foco melhor visível */
+}
+
+/* Estilo das Seções */
 section {
     margin: 40px 0;
 }
@@ -136,14 +151,46 @@ footer p {
     font-size: 1rem;
 }
 
+/* Estilo do Formulário de Contato */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(72, 160, 72, 0.3);
+    outline: none;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem; /* Ajuste do tamanho do título para telas menores */
+        font-size: 2.2rem; /* Ajuste do título para telas menores */
     }
 
     p {
-        font-size: 1rem; /* Ajuste do tamanho do parágrafo para telas menores */
+        font-size: 1rem;
     }
 
     button {
@@ -153,12 +200,16 @@ footer p {
 
     header nav ul {
         flex-direction: column;
-        gap: 15px; /* Reduzir o espaçamento entre os links */
+        gap: 15px;
     }
 
     .container {
         padding: 30px;
         width: 100%;
+    }
+
+    form {
+        align-items: center;
     }
 }
 
@@ -176,6 +227,5 @@ footer p {
 }
 
 button:focus {
-    outline: none;
     animation: pulse 1.5s ease-in-out infinite;
 }
